@@ -51,10 +51,10 @@ const Cambio = () => {
   return (
     <section className="w-full text-center flex flex-col gap-12">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl">Câmbio</h1>
+        <h1 className="text-4xl text-[#1A2631]">Câmbio</h1>
         <h2 className="text-base">Valores retirados do dia: {currentDate}</h2>
       </div>
-      <div className="flex lg:flex-row flex-col justify-center lg:gap-48 gap-8 p-8 lg:-mt-0 -mt-12 lg:p-0">
+      <div className="flex lg:flex-row flex-col lg:gap-0 gap-8 justify-around p-8 lg:mx-24 lg:-mt-0 -mt-12 lg:p-0">
         <Card TypeMoeda="Dólar" Valor={dolar} />
         <Card TypeMoeda="Euro" Valor={euro} />
         <Card TypeMoeda="Yuan Chinês" Valor={yuan} />

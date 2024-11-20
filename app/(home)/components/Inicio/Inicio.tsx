@@ -4,8 +4,9 @@ import Image from "next/image";
 import inicioImage from "@/public/inicio/inicioImage.png";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Dashboard from "./Dashboard";
-import Cambio from "./Cambio";
+import Dashboard from "./Components/Dashboard";
+import Cambio from "./Components/Cambio";
+import Motivo from "./Components/Motivo";
 
 const Inicio = () => {
   return (
@@ -44,6 +45,9 @@ const Inicio = () => {
       </div>
       <div className="pt-12">
         <Cambio />
+      </div>
+      <div className="lg:pt-32 pt-12">
+        <Motivo />
       </div>
     </div>
   );
