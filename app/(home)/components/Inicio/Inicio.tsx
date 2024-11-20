@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import Dashboard from "./Components/Dashboard";
 import Cambio from "./Components/Cambio";
 import Motivo from "./Components/Motivo";
+import Posicao from "./Components/Posicao";
 
 const Inicio = () => {
   return (
@@ -16,8 +17,7 @@ const Inicio = () => {
           <h1 className="text-xl lg:text-5xl font-semibold">
             <text className="text-primary">Seja bem-vindo</text>{" "}
             <text className="text-[#1A2631]">
-              somos a<br />
-              Perfil Despachos,
+              somos a Perfil Despachos,
               <br />
             </text>{" "}
             <text className="text-secondary">
@@ -48,6 +48,9 @@ const Inicio = () => {
       </div>
       <div className="lg:pt-32 pt-12">
         <Motivo />
+      </div>
+      <div className="lg:-mt-56">
+        <Posicao />
       </div>
     </div>
   );
