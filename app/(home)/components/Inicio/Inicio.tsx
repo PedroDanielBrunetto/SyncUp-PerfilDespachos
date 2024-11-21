@@ -24,7 +24,7 @@ import { Textarea } from "@/components/ui/textarea";
 const Inicio = () => {
   return (
     <div>
-      <section className="lg:w-full lg:justify-center p-8 lg:p-80 lg:-mt-56 flex flex-col lg:flex-row gap-12">
+      <section className="lg:w-full lg:justify-center p-8 lg:p-80 lg:-mt-72 flex flex-col lg:flex-row gap-12">
         <div className="lg:flex-1 lg:pt-16">
           <h1 className="text-xl lg:text-5xl font-semibold">
             <text className="text-primary">Seja bem-vindo</text>{" "}
@@ -33,7 +33,7 @@ const Inicio = () => {
               <br />
             </text>{" "}
             <text className="text-secondary">
-              especialistas em despacho.
+              especialistas em<br/> Despacho Aduaneiro.
             </text>{" "}
           </h1>
           <div className="pt-4">

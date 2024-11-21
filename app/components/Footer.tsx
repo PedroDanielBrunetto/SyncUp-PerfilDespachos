@@ -50,11 +50,21 @@ const Footer = () => {
       </footer>
       <div className="bg-primary pb-6 rounded-b-lg">
         <p className="text-white text-center text-sm md:text-base">
-          Endereço: R. Martim Affonso, 38 - Centro, Santos - SP, 11010-060
+          Endereço:{" "}
+          <a
+            href="https://maps.app.goo.gl/4FJAh47HAH5WZja26"
+            className="underline hover:text-gray-800"
+          >
+            R. Martim Affonso, 38 - Centro, Santos - SP, 11010-060
+          </a>
         </p>
         <p className="text-white text-center text-sm md:text-base">
-          Telefone: (13) 3223-5064
+          Telefone:{" "}
+          <a href="tel:+551332235064" className="underline hover:text-gray-800">
+            (13) 3223-5064
+          </a>
         </p>
+
         <p className="text-white text-center text-xs pt-2">
           Copyright © 2025 Perfil Despachos CNPJ: 05.631.543/0001-20
         </p>
