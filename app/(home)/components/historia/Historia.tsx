@@ -40,12 +40,6 @@ const Historia = () => {
           </p>
           <div className="flex items-center lg:gap-4 gap-2">
             <Image src={aspas} alt="Aspas" />
-            <div className="flex flex-col">
-              <span className="text-xs font-medium">
-                JOÃO WELLINGTON ISIDIO JANUARIO
-              </span>
-              <span className="text-xs font-normal">Fundador</span>
-            </div>
           </div>
         </div>
         <div>
