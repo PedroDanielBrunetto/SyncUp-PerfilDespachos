@@ -5,6 +5,18 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import AreaClienteStory from "./Components/AreaClienteStory";
 import Footer from "@/app/components/Footer";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 const Historia = () => {
   return (
@@ -44,9 +56,62 @@ const Historia = () => {
         <span className="text-sm text-[#04195B] font-medium">
           Gostou da Perfil?
         </span>
-        <Button className="mt-1 flex gap-2 bg-primary p-8 text-xl">
-          Entrar em contato <ArrowRight />
-        </Button>
+        <div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className="mt-1 flex gap-2 bg-primary p-8 text-xl">
+                Entrar em contato <ArrowRight />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>Entrar em contato</DialogTitle>
+                <DialogDescription>
+                  Deixe aqui suas informações que os especialistas da nossa
+                  equipe entrará em contato com você.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid gap-4 py-4">
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="name" className="text-right">
+                    Nome
+                  </Label>
+                  <Input
+                    id="name"
+                    placeholder="Ex. Pedro Duarte"
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="email" className="text-right">
+                    Email
+                  </Label>
+                  <Input
+                    id="email"
+                    placeholder="Ex. nome@email.com"
+                    className="col-span-3"
+                  />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="mensagem" className="text-right">
+                    Mensagem
+                  </Label>
+                  <Textarea
+                    id="mensagem"
+                    placeholder="Se quiser, envie-nos uma mensagem para iniciarmos com pé direito!"
+                    maxLength={280} // Limita o campo a 280 caracteres
+                    className="col-span-3"
+                  />
+                </div>
+              </div>
+              <DialogFooter>
+                <Button type="submit" className="bg-black hover:bg-gray-900">
+                  Enviar
+                </Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </div>
       </div>
       <div className="p-12">
         <Footer />

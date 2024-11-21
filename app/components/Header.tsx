@@ -5,6 +5,18 @@ import Image from "next/image";
 import Logo from "@/public/Logo.png";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Menu, X } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,9 +94,60 @@ const Header = () => {
             >
               Área do Cliente
             </Button>
-            <Button className="flex gap-2 bg-primary">
-              Entrar em contato <ArrowRight />
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="flex gap-2 bg-primary">
+                  Entrar em contato <ArrowRight />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Entrar em contato</DialogTitle>
+                  <DialogDescription>
+                    Deixe aqui suas informações que os especialistas da nossa
+                    equipe entrará em contato com você.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="name" className="text-right">
+                      Nome
+                    </Label>
+                    <Input
+                      id="name"
+                      placeholder="Ex. Pedro Duarte"
+                      className="col-span-3"
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="email" className="text-right">
+                      Email
+                    </Label>
+                    <Input
+                      id="email"
+                      placeholder="Ex. nome@email.com"
+                      className="col-span-3"
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="mensagem" className="text-right">
+                      Mensagem
+                    </Label>
+                    <Textarea
+                      id="mensagem"
+                      placeholder="Se quiser, envie-nos uma mensagem para iniciarmos com pé direito!"
+                      maxLength={280} // Limita o campo a 280 caracteres
+                      className="col-span-3"
+                    />
+                  </div>
+                </div>
+                <DialogFooter>
+                  <Button type="submit" className="bg-black hover:bg-gray-900">
+                    Enviar
+                  </Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
           </li>
         </ul>
       </nav>
@@ -113,9 +176,60 @@ const Header = () => {
         <Button variant="link" className="text-black hover:font-bold">
           Área do Cliente
         </Button>
-        <Button className="flex gap-2 bg-primary">
-          Entrar em contato <ArrowRight />
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button className="flex gap-2 bg-primary">
+              Entrar em contato <ArrowRight />
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Entrar em contato</DialogTitle>
+              <DialogDescription>
+                Deixe aqui suas informações que os especialistas da nossa equipe
+                entrará em contato com você.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="name" className="text-right">
+                  Nome
+                </Label>
+                <Input
+                  id="name"
+                  placeholder="Ex. Pedro Duarte"
+                  className="col-span-3"
+                />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="email" className="text-right">
+                  Email
+                </Label>
+                <Input
+                  id="email"
+                  placeholder="Ex. nome@email.com"
+                  className="col-span-3"
+                />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="mensagem" className="text-right">
+                  Mensagem
+                </Label>
+                <Textarea
+                  id="mensagem"
+                  placeholder="Se quiser, envie-nos uma mensagem para iniciarmos com pé direito!"
+                  maxLength={280} // Limita o campo a 280 caracteres
+                  className="col-span-3"
+                />
+              </div>
+            </div>
+            <DialogFooter>
+              <Button type="submit" className="bg-black hover:bg-gray-900">
+                Enviar
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
     </header>
   );
