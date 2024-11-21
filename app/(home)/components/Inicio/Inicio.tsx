@@ -38,10 +38,9 @@ const Inicio = () => {
           </h1>
           <div className="pt-4">
             <p className="lg:text-xl">
-              Somos especializados em soluções ágeis e eficientes para o
-              comércio exterior. Com uma equipe altamente qualificada,
-              oferecemos suporte completo para que sua empresa realize operações
-              internacionais com tranquilidade e segurança.
+              Somos uma empresa especializada em comércio exterior, voltada para
+              operações marítimas, aéreas, rodoviárias e multimodais, tanto para
+              exportações como para importações.
             </p>
             <Dialog>
               <DialogTrigger asChild>

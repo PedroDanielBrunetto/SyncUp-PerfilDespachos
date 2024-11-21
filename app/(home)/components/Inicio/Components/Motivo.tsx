@@ -13,7 +13,7 @@ const Motivo = () => {
         Por que ser cliente <text className="text-[#4D65FF]">Perfil?</text>
       </h1>
       <section className="lg:w-full lg:justify-center p-4 lg:p-80 lg:-mt-72 flex flex-col lg:flex-row gap-12 items-center">
-        <div className="grid lg:grid-cols-2 grid-cols-1 p-4">
+        <div className="grid lg:grid-cols-2 lg:gap-2 grid-cols-1 p-4">
           <div className="flex flex-col gap-2 max-w-80 pt-6">
             <Image src={logistica} alt="Log" />
             <h1 className="text-black font-semibold">Logística integrada</h1>
@@ -31,11 +31,11 @@ const Motivo = () => {
             </p>
           </div>
           <div className="flex flex-col gap-2 max-w-80 pt-6">
-            <Image src={world} alt="DUE" />
-            <h1 className="text-black font-semibold">Registro da Declaração</h1>
+            <Image src={world} width={70} alt="DUE" />
+            <h1 className="text-black font-semibold">Operações de Embarque</h1>
             <p className="text-[#04195B]">
-              Preenchimento e envio da Declaração de Importação (DI) ou
-              Declaração de Exportação (DU-E).
+              Reserva de praça em navios de sua preferência, ou naqueles que
+              atendam as exigências de segurança e regularidade.
             </p>
           </div>
           <div className="flex flex-col gap-2 max-w-80 pt-5">

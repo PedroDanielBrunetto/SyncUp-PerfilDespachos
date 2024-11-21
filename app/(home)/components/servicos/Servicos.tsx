@@ -53,15 +53,19 @@ const Servicos = () => {
         <article className="flex flex-col items-center lg:flex-row lg:gap-12 gap-4 max-w-[1024px]">
           <Image src={navio} width={420} alt="Navio" />
           <div>
-            <h2 className="text-lg text-[#1A2631]">Importação</h2>
+            <h2 className="text-lg text-[#1A2631]">Importação e Exportação</h2>
             <p className="text-sm">
-              A importação é o processo de trazer produtos ou mercadorias de
-              outro país para atender à demanda local. Este processo envolve uma
-              série de etapas, como negociação com fornecedores internacionais,
-              transporte, desembaraço aduaneiro e entrega no destino final. A
-              importação contribui para a diversificação de produtos no mercado,
-              permitindo o acesso a bens de alta qualidade que não estão
-              disponíveis localmente.
+              A importação e exportação são processos essenciais para o comércio
+              internacional. A importação envolve trazer produtos ou mercadorias
+              de outros países para atender à demanda local, abrangendo etapas
+              como negociação com fornecedores estrangeiros, transporte,
+              desembaraço aduaneiro e entrega. Já a exportação consiste em
+              enviar bens ou serviços produzidos internamente para mercados
+              externos, contribuindo para o crescimento econômico e a geração de
+              receita. Ambas as práticas permitem a diversificação de produtos,
+              o acesso a tecnologias ou recursos não disponíveis localmente e a
+              expansão de mercados para as empresas, fortalecendo as relações
+              comerciais globais.
             </p>
           </div>
         </article>

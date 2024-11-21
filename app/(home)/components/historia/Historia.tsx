@@ -25,7 +25,7 @@ const Historia = () => {
         <div className="lg:w-[600px] flex flex-col gap-2">
           <h1 className="text-2xl">Nossa História</h1>
           <p>
-            Desde a nossa fundação, em 1997, o compromisso com a excelência nos
+            Desde a nossa fundação, em 2002, o compromisso com a excelência nos
             posicionou como referência no setor de comércio exterior. Começamos
             com uma pequena equipe e grandes sonhos, sempre focados em entender
             as necessidades dos nossos clientes e entregar soluções
