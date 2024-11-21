@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-primary rounded-lg shadow-md rounded-b-lg">
+    <div className="bg-primary rounded-lg shadow-md rounded-b-lg lg:w-auto w-[280px]">
       <footer className="flex flex-col lg:flex-row justify-center p-8 lg:p-20 items-center gap-8">
         <div className="lg:w-1/3">
           <nav>
