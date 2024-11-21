@@ -12,7 +12,7 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="flex items-center lg:justify-around lg:p-0 justify-between p-4 pr-8 shadow-sm">
+    <header className="sticky top-0 z-50 w-full flex items-center lg:justify-around lg:p-0 justify-between p-4 pr-8 shadow-sm bg-white">
       <div className="lg:py-4">
         <Image
           src={Logo}
