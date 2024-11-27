@@ -54,7 +54,7 @@ const Cambio = () => {
         <h1 className="text-4xl text-[#1A2631]">Câmbio</h1>
         <h2 className="text-base">Valores retirados do dia: {currentDate}</h2>
       </div>
-      <div className="flex lg:flex-row flex-col lg:gap-0 gap-8 justify-around p-8 lg:mx-24 lg:-mt-0 -mt-12 lg:p-0">
+      <div className="flex xl:flex-row flex-col xl:gap-2 gap-8 justify-around p-8 xl:mx-24 xl:-mt-0 -mt-12 xl:p-0">
         <Card TypeMoeda="Dólar" Valor={dolar} />
         <Card TypeMoeda="Euro" Valor={euro} />
         <Card TypeMoeda="Yuan Chinês" Valor={yuan} />

@@ -12,8 +12,8 @@ const Motivo = () => {
       <h1 className="text-4xl text-[#1A2631] text-center">
         Por que ser cliente <text className="text-[#4D65FF]">Perfil?</text>
       </h1>
-      <section className="lg:w-full lg:justify-center p-4 lg:p-80 lg:-mt-72 flex flex-col items-center">
-        <div className="grid lg:grid-cols-2 grid-cols-1 p-4 gap-0 lg:gap-10">
+      <section className="xl:w-full xl:justify-center p-4 xl:p-80 xl:-mt-72 flex flex-col items-center">
+        <div className="grid xl:grid-cols-2 grid-cols-1 p-4 gap-0 xl:gap-10">
           {[
             {
               image: logistica,
@@ -42,7 +42,7 @@ const Motivo = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-start p-4 lg:p-6 mb-6 lg:mb-0 border-b border-gray-200 last:border-b-0 lg:border-b-0"
+              className="flex flex-col items-start p-4 xl:p-6 mb-6 xl:mb-0 border-b border-gray-200 last:border-b-0 xl:border-b-0"
             >
               <Image src={item.image} alt={item.alt} width={64} height={64} />
               <h1 className="text-black font-semibold mt-2">{item.title}</h1>

@@ -24,9 +24,9 @@ import { Textarea } from "@/components/ui/textarea";
 const Inicio = () => {
   return (
     <div>
-      <section className="lg:w-full lg:justify-center p-8 lg:p-80 lg:-mt-72 flex flex-col lg:flex-row gap-12">
-        <div className="lg:flex-1 lg:pt-16">
-          <h1 className="text-xl lg:text-5xl font-semibold">
+      <section className="xl:w-full xl:justify-center p-8 xl:p-80 xl:-mt-72 flex flex-col xl:flex-row gap-12">
+        <div className="xl:flex-1 xl:pt-16">
+          <h1 className="text-xl xl:text-5xl font-semibold">
             <text className="text-primary">Seja bem-vindo</text>{" "}
             <text className="text-[#1A2631]">
               somos a Perfil Despachos,
@@ -37,7 +37,7 @@ const Inicio = () => {
             </text>{" "}
           </h1>
           <div className="pt-4">
-            <p className="lg:text-xl">
+            <p className="xl:text-xl">
               Somos uma empresa especializada em comércio exterior, voltada para
               operações marítimas, aéreas, rodoviárias e multimodais, tanto para
               exportações como para importações.
@@ -98,20 +98,20 @@ const Inicio = () => {
             </Dialog>
           </div>
         </div>
-        <div className="lg:flex-1">
+        <div className="xl:flex-1 flex justify-center">
           <Image src={inicioImage} alt="Inicio" />
         </div>
       </section>
-      <div className="lg:-mt-56">
+      <div className="xl:-mt-56">
         <Dashboard />
       </div>
       <div className="pt-12">
         <Cambio />
       </div>
-      <div className="lg:pt-32 pt-12">
+      <div className="xl:pt-32 pt-12">
         <Motivo />
       </div>
-      <div className="lg:-mt-56">
+      <div className="xl:-mt-56">
         <Posicao />
       </div>
     </div>
