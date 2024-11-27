@@ -12,43 +12,47 @@ const Motivo = () => {
       <h1 className="text-4xl text-[#1A2631] text-center">
         Por que ser cliente <text className="text-[#4D65FF]">Perfil?</text>
       </h1>
-      <section className="lg:w-full lg:justify-center p-4 lg:p-80 lg:-mt-72 flex flex-col lg:flex-row gap-12 items-center">
-        <div className="grid lg:grid-cols-2 lg:gap-2 grid-cols-1 p-4">
-          <div className="flex flex-col gap-2 max-w-80 pt-6">
-            <Image src={logistica} alt="Log" />
-            <h1 className="text-black font-semibold">Logística integrada</h1>
-            <p className="text-[#04195B]">
-              Planejamento e execução do transporte internacional, garantindo a
-              entrega dentro do prazo.
-            </p>
-          </div>
-          <div className="flex flex-col gap-2 max-w-80 pt-6">
-            <Image src={money} alt="Despacho" />
-            <h1 className="text-black font-semibold">Despacho Aduaneiro</h1>
-            <p className="text-[#04195B]">
-              Acompanhamento do processo junto à Receita Federal e demais órgãos
-              reguladores para liberação da mercadoria.
-            </p>
-          </div>
-          <div className="flex flex-col gap-2 max-w-80 pt-6">
-            <Image src={world} width={70} alt="DUE" />
-            <h1 className="text-black font-semibold">Operações de Embarque</h1>
-            <p className="text-[#04195B]">
-              Reserva de praça em navios de sua preferência, ou naqueles que
-              atendam as exigências de segurança e regularidade.
-            </p>
-          </div>
-          <div className="flex flex-col gap-2 max-w-80 pt-5">
-            <Image src={money} alt="Controle Tributário" />
-            <h1 className="text-black font-semibold">Controle Tributário</h1>
-            <p className="text-[#04195B]">
-              Cálculo e acompanhamento do pagamento de tributos, como ICMS, IPI
-              e PIS/COFINS.
-            </p>
-          </div>
+      <section className="lg:w-full lg:justify-center p-4 lg:p-80 lg:-mt-72 flex flex-col items-center">
+        <div className="grid lg:grid-cols-2 grid-cols-1 p-4 gap-0 lg:gap-10">
+          {[
+            {
+              image: logistica,
+              alt: "Log",
+              title: "Logística integrada",
+              text: "Planejamento e execução do transporte internacional, garantindo a entrega dentro do prazo.",
+            },
+            {
+              image: money,
+              alt: "Despacho",
+              title: "Despacho Aduaneiro",
+              text: "Acompanhamento do processo junto à Receita Federal e demais órgãos reguladores para liberação da mercadoria.",
+            },
+            {
+              image: world,
+              alt: "DUE",
+              title: "Operações de Embarque",
+              text: "Reserva de praça em navios de sua preferência, ou naqueles que atendam as exigências de segurança e regularidade.",
+            },
+            {
+              image: money,
+              alt: "Controle Tributário",
+              title: "Controle Tributário",
+              text: "Cálculo e acompanhamento do pagamento de tributos, como ICMS, IPI e PIS/COFINS.",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-start p-4 lg:p-6 mb-6 lg:mb-0 border-b border-gray-200 last:border-b-0 lg:border-b-0"
+            >
+              <Image src={item.image} alt={item.alt} width={64} height={64} />
+              <h1 className="text-black font-semibold mt-2">{item.title}</h1>
+              <p className="text-[#04195B] mt-1">{item.text}</p>
+            </div>
+          ))}
         </div>
-        <div className="lg:flex-2">
-          <Image src={clientePerfil} width={560} alt="cliente" />
+
+        <div>
+          <Image src={clientePerfil} alt="cliente" />
         </div>
       </section>
     </div>
