@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import truck from "@/public/historia/3d-truck.png";
 import aspas from "@/public/historia/aspas.png";

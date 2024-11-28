@@ -1,3 +1,5 @@
+"use client"
+
 import mapa from "@/public/inicio/mapa.png";
 import Image from "next/image";
 

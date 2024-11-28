@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import syncup from "@/public/syncup_logo.png";
 import Link from "next/link";

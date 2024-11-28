@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import areaClienteStory from "@/public/historia/areaClienteLogin.png";
 import { Button } from "@/components/ui/button";

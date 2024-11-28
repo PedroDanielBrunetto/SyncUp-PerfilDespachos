@@ -1,4 +1,5 @@
-import Footer from "../components/Footer";
+"use client"
+
 import Header from "../components/Header";
 import Historia from "./components/historia/Historia";
 import Inicio from "./components/Inicio/Inicio";
