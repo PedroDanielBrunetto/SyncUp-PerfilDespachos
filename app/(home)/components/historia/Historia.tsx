@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import truck from "@/public/historia/3d-truck.png";
@@ -19,8 +19,62 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import axios from "axios";
+import { useState } from "react";
 
 const Historia = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    nome: "",
+    email: "",
+    mensagem: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const response = await axios.post(
+        "https://wservices-perfildespachos.vercel.app/send-email",
+        {
+          nome: formData.nome,
+          email: formData.email,
+          mensagem: formData.mensagem,
+        }
+      );
+
+      if (response.status === 200) {
+        setMessage("Mensagem enviada com sucesso!");
+      } else {
+        setMessage("Erro ao enviar mensagem.");
+      }
+    } catch (error) {
+      setMessage("Erro ao enviar mensagem.");
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => {
+        setMessage("");
+        setFormData({
+          nome: "",
+          email: "",
+          mensagem: "",
+        });
+      }, 1500);
+    }
+  };
+
   return (
     <section className="p-8 flex justify-center flex-col items-center">
       <div className="lg:w-[1024px] shadow-lg flex rounded-md lg:flex-row flex-col bg-[#FAFAFA] p-6">
@@ -64,47 +118,73 @@ const Historia = () => {
                 <DialogTitle>Entrar em contato</DialogTitle>
                 <DialogDescription>
                   Deixe aqui suas informações que os especialistas da nossa
-                  equipe entrará em contato com você.
+                  equipe entrarão em contato com você.
                 </DialogDescription>
               </DialogHeader>
-              <div className="grid gap-4 py-4">
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="name" className="text-right">
-                    Nome
-                  </Label>
-                  <Input
-                    id="name"
-                    placeholder="Ex. Pedro Duarte"
-                    className="col-span-3"
-                  />
+              <form onSubmit={handleSubmit}>
+                <div className="grid gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="nome" className="text-right">
+                      Nome
+                    </Label>
+                    <Input
+                      id="nome"
+                      name="nome"
+                      placeholder="Ex. Pedro Duarte"
+                      value={formData.nome}
+                      onChange={handleChange}
+                      className="col-span-3"
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="email" className="text-right">
+                      Email
+                    </Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      placeholder="Ex. nome@email.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="col-span-3"
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="mensagem" className="text-right">
+                      Mensagem
+                    </Label>
+                    <Textarea
+                      id="mensagem"
+                      name="mensagem"
+                      placeholder="Se quiser, envie-nos uma mensagem para iniciarmos com pé direito!"
+                      maxLength={280}
+                      value={formData.mensagem}
+                      onChange={handleChange}
+                      className="col-span-3"
+                    />
+                  </div>
                 </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="email" className="text-right">
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    placeholder="Ex. nome@email.com"
-                    className="col-span-3"
-                  />
+                <DialogFooter>
+                  <Button
+                    type="submit"
+                    className="bg-black hover:bg-gray-900"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? "Enviando..." : "Enviar"}
+                  </Button>
+                </DialogFooter>
+              </form>
+              {message && (
+                <div
+                  className={`mt-4 p-2 text-center text-white ${
+                    message.includes("sucesso")
+                      ? "text-green-500"
+                      : "text-red-500"
+                  }`}
+                >
+                  {message}
                 </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="mensagem" className="text-right">
-                    Mensagem
-                  </Label>
-                  <Textarea
-                    id="mensagem"
-                    placeholder="Se quiser, envie-nos uma mensagem para iniciarmos com pé direito!"
-                    maxLength={280} // Limita o campo a 280 caracteres
-                    className="col-span-3"
-                  />
-                </div>
-              </div>
-              <DialogFooter>
-                <Button type="submit" className="bg-black hover:bg-gray-900">
-                  Enviar
-                </Button>
-              </DialogFooter>
+              )}
             </DialogContent>
           </Dialog>
         </div>
