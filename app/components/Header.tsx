@@ -217,7 +217,7 @@ const Header = () => {
                 </form>
                 {message && (
                   <div
-                    className={`mt-4 p-2 text-center text-white ${
+                    className={`mt-4 p-2 text-center text-black ${
                       message.includes("sucesso")
                         ? "text-green-500"
                         : "text-red-500"
@@ -325,7 +325,7 @@ const Header = () => {
             </form>
             {message && (
               <div
-                className={`mt-4 p-2 text-center text-white ${
+                className={`mt-4 p-2 text-center text-black ${
                   message.includes("sucesso") ? "text-green-500" : "text-red-500"
                 }`}
               >

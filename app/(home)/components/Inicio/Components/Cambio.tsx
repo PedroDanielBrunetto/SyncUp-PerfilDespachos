@@ -20,9 +20,9 @@ type Moeda = {
 
 const Cambio = () => {
   const [currentDate, setCurrentDate] = useState("");
-  const [dolar, setDolar] = useState<number>(0);
-  const [euro, setEuro] = useState<number>(0);
-  const [yuan, setYuan] = useState<number>(0);
+  const [dolarData, setDolarData] = useState<Moeda | null>(null);
+  const [euroData, setEuroData] = useState<Moeda | null>(null);
+  const [yuanData, setYuanData] = useState<Moeda | null>(null);
 
   useEffect(() => {
     const date = new Date();
@@ -34,19 +34,27 @@ const Cambio = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const { data } = await axios.get<{
-        USDBRL: Moeda;
-        EURBRL: Moeda;
-        CNYBRL: Moeda;
-      }>("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,CNY-BRL");
+      try {
+        const { data } = await axios.get<{
+          USDBRL: Moeda;
+          EURBRL: Moeda;
+          CNYBRL: Moeda;
+        }>("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,CNY-BRL");
 
-      setDolar(parseFloat(data.USDBRL.ask));
-      setEuro(parseFloat(data.EURBRL.ask));
-      setYuan(parseFloat(data.CNYBRL.ask));
+        setDolarData(data.USDBRL);
+        setEuroData(data.EURBRL);
+        setYuanData(data.CNYBRL);
+      } catch (error) {
+        console.error("Erro ao buscar os dados de câmbio:", error);
+      }
     };
 
     fetch();
   }, []);
+
+  if (!dolarData || !euroData || !yuanData) {
+    return <p>Carregando...</p>;
+  }
 
   return (
     <section className="w-full text-center flex flex-col gap-12">
@@ -55,9 +63,42 @@ const Cambio = () => {
         <h2 className="text-base">Valores retirados do dia: {currentDate}</h2>
       </div>
       <div className="flex xl:flex-row flex-col xl:gap-2 gap-8 justify-around p-8 xl:mx-24 xl:-mt-0 -mt-12 xl:p-0">
-        <Card TypeMoeda="Dólar" Valor={dolar} />
-        <Card TypeMoeda="Euro" Valor={euro} />
-        <Card TypeMoeda="Yuan Chinês" Valor={yuan} />
+        <Card
+          TypeMoeda={"Dólar"}
+          Valor={parseFloat(dolarData.ask)}
+          High={parseFloat(dolarData.high)}
+          Low={parseFloat(dolarData.low)}
+          VarBid={parseFloat(dolarData.varBid)}
+          PctChange={parseFloat(dolarData.pctChange)}
+          Bid={parseFloat(dolarData.bid)}
+          Ask={parseFloat(dolarData.ask)}
+          Timestamp={parseInt(dolarData.timestamp)}
+          CreateDate={dolarData.create_date}
+        />
+        <Card
+          TypeMoeda={"Euro"}
+          Valor={parseFloat(euroData.ask)}
+          High={parseFloat(euroData.high)}
+          Low={parseFloat(euroData.low)}
+          VarBid={parseFloat(euroData.varBid)}
+          PctChange={parseFloat(euroData.pctChange)}
+          Bid={parseFloat(euroData.bid)}
+          Ask={parseFloat(euroData.ask)}
+          Timestamp={parseInt(euroData.timestamp)}
+          CreateDate={euroData.create_date}
+        />
+        <Card
+          TypeMoeda={"Yuan Chinês"}
+          Valor={parseFloat(yuanData.ask)}
+          High={parseFloat(yuanData.high)}
+          Low={parseFloat(yuanData.low)}
+          VarBid={parseFloat(yuanData.varBid)}
+          PctChange={parseFloat(yuanData.pctChange)}
+          Bid={parseFloat(yuanData.bid)}
+          Ask={parseFloat(yuanData.ask)}
+          Timestamp={parseInt(yuanData.timestamp)}
+          CreateDate={yuanData.create_date}
+        />
       </div>
     </section>
   );
