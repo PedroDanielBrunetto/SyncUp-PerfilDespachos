@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import quinhentos from "@/public/numeros/500+.png";
+import quinze from "@/public/numeros/15+.png";
 import dezmil from "@/public/numeros/10,000+.png";
 import cinquenta from "@/public/numeros/50+.png";
 
@@ -22,7 +22,7 @@ const Dashboard = () => {
         {/* <h1 className="text-transparent bg-gradient-to-r from-[#0179B4] to-[#88D8FF] bg-clip-text text-4xl lg:text-6xl font-semibold text-center">
           500+
         </h1> */}
-        <Image src={quinhentos} alt="500+" />
+        <Image src={cinquenta} alt="50+" />
         <p className="text-sm text-[#6D6D6D] lg:pt-[14px] pt-2 text-center">
           Clientes atendidos
         </p>
@@ -32,7 +32,7 @@ const Dashboard = () => {
         {/* <h1 className="text-transparent bg-gradient-to-r from-[#0179B4] to-[#88D8FF] bg-clip-text text-4xl lg:text-6xl font-semibold text-center">
           50+
         </h1> */}
-        <Image src={cinquenta} alt="50+" />
+        <Image src={quinze} alt="15+" />
         <p className="text-sm text-[#6D6D6D] lg:pt-[14px] pt-2 text-center">
           Despachos mensais
         </p>
